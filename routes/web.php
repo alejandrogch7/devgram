@@ -31,7 +31,7 @@ Route::get('/edit-profile', [ProfileController::class, 'index'])->name('profile.
 Route::post('/edit-profile', [ProfileController::class, 'store'])->name('profile.store');
 
 
-Route::get('/{user:username}', [PostController::class, 'index'])->name('posts.index')->middleware('auth');
+Route::get('/{user:username}', [PostController::class, 'index'])->name('posts.index');
 Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create')->middleware('auth');
 Route::post('/posts/store', [PostController::class, 'store'])->name('posts.store')->middleware('auth');
 Route::get('/{user:username}/posts/{post}', [PostController::class, 'show'])->name('posts.show');
